@@ -40,5 +40,12 @@
         "title": "Alien Space SNIPER SHOOTER",
         "slug": "6",
         "category": "1"
+    },
+    {
+        "gameImage": "/images/others/tetris-1.webp",
+        "btnName": "Game Details",
+        "title": "Tetris",
+        "slug": "7",
+        "category": "1"
     }
 ]
