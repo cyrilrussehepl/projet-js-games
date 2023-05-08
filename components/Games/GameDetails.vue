@@ -29,25 +29,40 @@
         </swiper>
 
         <!-- Testimonial Arrows -->
-
-        <div class="flex mt-10">
-          <div
-            class="gameslide-button-prev swipper-arrow text-white md:w-68 w-55 md:h-55 h-11 bg-cover flex items-center justify-center hover:bg-arrow-hover-shape bg-arrow-shape transition-all z-50 mr-2"
-          >
-            <img
-              class="w-4 h-6"
-              src="/images/icon/navigation-arrow2.webp"
-              alt=""
-            />
+        <div class="flex justify-between">
+          <div class="flex mt-10">
+            <div
+              class="gameslide-button-prev swipper-arrow text-white md:w-68 w-55 md:h-55 h-11 bg-cover flex items-center justify-center hover:bg-arrow-hover-shape bg-arrow-shape transition-all z-50 mr-2"
+            >
+              <img
+                class="w-4 h-6"
+                src="/images/icon/navigation-arrow2.webp"
+                alt=""
+              />
+            </div>
+            <div
+              class="gameslide-button-next swipper-arrow text-white md:w-68 w-55 md:h-55 h-11 flex items-center justify-center hover:bg-arrow-hover-shape bg-arrow-shape bg-cover transition-all z-50 ml-2"
+            >
+              <img
+                class="w-4 h-6"
+                src="/images/icon/navigation-arrow1.webp"
+                alt=""
+              />
+            </div>
           </div>
-          <div
-            class="gameslide-button-next swipper-arrow text-white md:w-68 w-55 md:h-55 h-11 flex items-center justify-center hover:bg-arrow-hover-shape bg-arrow-shape bg-cover transition-all z-50 ml-2"
-          >
-            <img
-              class="w-4 h-6"
-              src="/images/icon/navigation-arrow1.webp"
-              alt=""
-            />
+          <div class="flex mt-10">
+            <NuxtLink
+              to="/Game"
+              style="background-image: url(/images/others/btn-bg.webp)"
+              class="w-230 md:text-2xl md:leading-12 h-73 flex items-center text-white font-bold justify-center font-exo group hover:opacity-80 leading-70 text-xl"
+            >
+              Play
+              <img
+                class="ml-3 w-5 h-5 group-hover:ml-4 transition-all"
+                src="/images/icon/arrrow-icon.webp"
+                alt="Arrow Icon"
+              />
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -78,6 +93,7 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import { Disqus } from "vue-disqus";
 export default {
   components: {
+    PrimaryButton: () => import("@/components/Button/PrimaryButton"),
     Swiper,
     SwiperSlide,
     Disqus,
