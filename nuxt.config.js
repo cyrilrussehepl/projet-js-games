@@ -2,7 +2,7 @@ export default {
   target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Bonx - Vue Js Gaming Website Template with Nuxt Js',
+    title: 'Stim',
     htmlAttrs: {
       lang: 'en'
     },
