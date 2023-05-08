@@ -8,40 +8,21 @@
     </h2>
     <div class="content-details">
       <div class="description mt-6">
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+        <p v-for="description in games.descriptions" class="leading-8">
+          {{ description }}
         </p>
       </div>
 
       <div class="gameslide my-15">
         <swiper class="swiper" :options="swiperOption">
           <swiper-slide
-            v-for="(game, imageIndex) in gameslide"
+            v-for="gameImg in games.presentationImg"
             :key="imageIndex"
           >
             <div class="relative">
               <img
                 class="sm:h-full h-64 w-full object-cover"
-                :src="`${game.gamingBg}`"
+                :src="`${gameImg}`"
               />
             </div>
           </swiper-slide>
@@ -71,87 +52,20 @@
         </div>
       </div>
 
-      <div class="description mt-6">
-        <h3 class="text-2xl text-white uppercase font-bold mb-5">
-          Description:
-        </h3>
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </div>
-      <div class="description mt-6">
-        <h3 class="text-2xl text-white uppercase font-bold mb-5">Features:</h3>
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-        <p class="leading-8">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap electro typesetting, remaining
-          essentially unchanged. It was popularised in the 1960s with the
-          release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
-        </p>
-      </div>
-
       <div
         class="additional-information-area bg-secondary-100 px-9 py-9 rounded-2xl mb-9"
       >
         <h3 class="text-2xl text-white uppercase font-bold mb-6">
-          Additional Information:
+          Leaderboard
         </h3>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 text-white"
-        >
+        <div class="grid grid-cols-2 gap-5 text-white">
           <div class="additional_information_text">
-            <h4 class="font-bold mb-5">Updated:</h4>
-            <p class="text-gray-400">2021-01-02</p>
+            <h4 class="font-bold mb-5">Player</h4>
+            <p class="text-gray-400">Hexalthy</p>
           </div>
           <div class="additional_information_text">
-            <h4 class="font-bold mb-5">SIZE:</h4>
-            <p class="text-gray-400">98MB</p>
-          </div>
-          <div class="additional_information_text">
-            <h4 class="font-bold mb-5">INSTALLS:</h4>
-            <p class="text-gray-400">80,000,000+</p>
-          </div>
-          <div class="additional_information_text">
-            <h4 class="font-bold mb-5">CURRENT VERSION:</h4>
-            <p class="text-gray-400">03.00.28.00.00</p>
-          </div>
-          <div class="additional_information_text">
-            <h4 class="font-bold mb-5">IN-APP PRODUCTS:</h4>
-            <p class="text-gray-400">$0.85 - $985.00</p>
+            <h4 class="font-bold mb-5">Score</h4>
+            <p class="text-gray-400">1253</p>
           </div>
         </div>
       </div>

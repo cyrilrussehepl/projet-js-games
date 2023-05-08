@@ -22,7 +22,7 @@
         class="container flex justify-between relative items-center md:flex-row flex-col-reverse"
       >
         <p class="text-gray-500 text-sm uppercase font-medium mb-0">
-          © 2021 BONX Made with <i class="icofont-heart text-primary"></i> by
+          © 2023 Mabe by TEAM A using BONX by
           <a
             href="https://hasthemes.com"
             class="transition-all hover:text-primary text-white"

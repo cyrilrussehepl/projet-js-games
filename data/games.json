@@ -4,20 +4,33 @@
         "btnName": "Game Details",
         "title": "Tetris",
         "slug": "1",
-        "category": "1"
+        "category": "1",
+        "descriptions":["Welcome to Tetris, the classic puzzle game that has captivated players for decades! In this addictive game, you'll need to use your strategic skills to fit the falling blocks into the correct positions. As the blocks drop faster and faster, you'll need to think quickly and react even faster to keep up.", 
+        " Tetris is easy to learn, but difficult to master. With its simple yet challenging gameplay, it's no wonder that Tetris has remained a fan favorite for so many years. Whether you're a casual player or a seasoned pro, you'll find yourself coming back to Tetris again and again for its timeless appeal.",
+        "So what are you waiting for? Start playing Tetris now and see how many lines you can clear before the blocks stack up too high! With its addictive gameplay and endless replayability, Tetris is sure to keep you entertained for hours on end."],
+        "presentationImg":[
+            "/images/others/tetris.png",
+            "/images/others/tetris.png",
+            "/images/others/tetris.png"
+        ]
+    
     },
     {
         "gameImage": "/images/others/jetpack-joyride.jpg",
         "btnName": "Game Details",
         "title": "Jetpack Joyride",
         "slug": "2",
-        "category": "2"
+        "category": "2",
+        "descriptions":[""],
+        "presentationImg":["/images/others/jetpack-joyride.jpg","/images/others/jetpack-joyride.jpg"]
     },
     {
         "gameImage": "/images/others/popular-game-thumb2.webp",
         "btnName": "Game Details",
         "title": "Alien Space Five Star",
         "slug": "3",
-        "category": "2"
+        "category": "2",
+        "descriptions":[""],
+        "presentationImg":["/images/others/popular-game-thumb2.webp"]
     }
 ]

@@ -39,8 +39,8 @@ export default {
   data() {
     return {
       gameHome,
-      title: "Popular Game",
-      text: "Play our most popular games",
+      title: "Popular Games",
+      text: "Play our most popular games now",
     };
   },
 };
