@@ -35,7 +35,7 @@
             bottom="auto"
             right="auto"
           >
-            <img src="/images/icon/scroll-top.webp" alt="" />
+            <img src="/images/icon/scroll-top.png" alt="" />
           </back-to-top>
         </client-only>
 
