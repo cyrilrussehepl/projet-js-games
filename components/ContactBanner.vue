@@ -32,15 +32,15 @@
 </template>
 
 <script>
-export default {
-  props: {
-    paddingTop: String,
-  },
-  data() {
-    return {
-      videoBannerBg: "/images/bg/gaming-update.webp",
-      btnName: "Contact Now",
-    };
-  },
-};
+  export default {
+    props: {
+      paddingTop: String,
+    },
+    data() {
+      return {
+        videoBannerBg: "/images/bg/gaming-update.webp",
+        btnName: "Contact Now",
+      };
+    },
+  };
 </script>

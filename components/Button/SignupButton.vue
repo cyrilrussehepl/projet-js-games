@@ -27,17 +27,17 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    // offcanvas mobile-menu
-    mobiletoggleClass(addRemoveClass, className) {
-      const el = document.querySelector("#offcanvas-menu");
-      if (addRemoveClass === "addClass") {
-        el.classList.add(className);
-      } else {
-        el.classList.remove(className);
-      }
+  export default {
+    methods: {
+      // offcanvas mobile-menu
+      mobiletoggleClass(addRemoveClass, className) {
+        const el = document.querySelector("#offcanvas-menu");
+        if (addRemoveClass === "addClass") {
+          el.classList.add(className);
+        } else {
+          el.classList.remove(className);
+        }
+      },
     },
-  },
-};
+  };
 </script>

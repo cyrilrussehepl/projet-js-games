@@ -26,32 +26,32 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      links: [
-        {
-          href: "https://www.facebook.com",
-          BgShape: "/images/icon/facebook-bg.webp",
-          className: "icofont-facebook text-white",
-        },
-        {
-          href: "https://www.dribble.com",
-          BgShape: "/images/icon/dribble.webp",
-          className: "icofont-dribbble text-white",
-        },
-        {
-          href: "https://www.youtube.com",
-          BgShape: "/images/icon/youtobe-bg.webp",
-          className: "icofont-youtube-play text-white",
-        },
-        {
-          href: "https://www.twitter.com",
-          BgShape: "/images/icon/twittre.webp",
-          className: "icofont-twitter text-white",
-        },
-      ],
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        links: [
+          {
+            href: "https://www.facebook.com",
+            BgShape: "/images/icon/facebook-bg.webp",
+            className: "icofont-facebook text-white",
+          },
+          {
+            href: "https://www.dribble.com",
+            BgShape: "/images/icon/dribble.webp",
+            className: "icofont-dribbble text-white",
+          },
+          {
+            href: "https://www.youtube.com",
+            BgShape: "/images/icon/youtobe-bg.webp",
+            className: "icofont-youtube-play text-white",
+          },
+          {
+            href: "https://www.twitter.com",
+            BgShape: "/images/icon/twittre.webp",
+            className: "icofont-twitter text-white",
+          },
+        ],
+      };
+    },
+  };
 </script>

@@ -40,45 +40,45 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      services: [
-        {
-          imgSrc: "/images/icon/email.webp",
-          name: "Service Image",
-          live: "Email:",
-          videoBannerBg: "/images/others/gaming-world-bg1.webp",
-          imageposition: "text-left",
-          contentposition: "text-left",
-          linkOnehref: "mailto:hepl@provincedeliege.be",
-          linkOne: "hepl@provincedeliege.be",
-          linkTwohref: "mailto:cyril.russe@student.hepl.be",
-          linkTwo: "cyril.russe@student.hepl.be",
-        },
-        {
-          imgSrc: "/images/icon/location.webp",
-          name: "Service Image",
-          live: "Location:",
-          videoBannerBg: "/images/others/gaming-world-bg2.webp",
-          text: "Rue Peetermans 80, 4100 Seraing",
-          imageposition: "text-center",
-          contentposition: "text-center",
-        },
-        {
-          imgSrc: "/images/icon/phone.webp",
-          name: "Service Image",
-          live: "Phone:",
-          videoBannerBg: "/images/others/gaming-world-bg3.webp",
-          imageposition: "text-right",
-          contentposition: "text-right",
-          linkOnehref: "tel:+32 (0)4 279 55 20",
-          linkOne: "+32 (0)4 279 55 20",
-          linkTwohref: "tel:+32 494 79 61 08",
-          linkTwo: "+32 494 79 61 08",
-        },
-      ],
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        services: [
+          {
+            imgSrc: "/images/icon/email.webp",
+            name: "Service Image",
+            live: "Email:",
+            videoBannerBg: "/images/others/gaming-world-bg1.webp",
+            imageposition: "text-left",
+            contentposition: "text-left",
+            linkOnehref: "mailto:hepl@provincedeliege.be",
+            linkOne: "hepl@provincedeliege.be",
+            linkTwohref: "mailto:cyril.russe@student.hepl.be",
+            linkTwo: "cyril.russe@student.hepl.be",
+          },
+          {
+            imgSrc: "/images/icon/location.webp",
+            name: "Service Image",
+            live: "Location:",
+            videoBannerBg: "/images/others/gaming-world-bg2.webp",
+            text: "Rue Peetermans 80, 4100 Seraing",
+            imageposition: "text-center",
+            contentposition: "text-center",
+          },
+          {
+            imgSrc: "/images/icon/phone.webp",
+            name: "Service Image",
+            live: "Phone:",
+            videoBannerBg: "/images/others/gaming-world-bg3.webp",
+            imageposition: "text-right",
+            contentposition: "text-right",
+            linkOnehref: "tel:+32 (0)4 279 55 20",
+            linkOne: "+32 (0)4 279 55 20",
+            linkTwohref: "tel:+32 494 79 61 08",
+            linkTwo: "+32 494 79 61 08",
+          },
+        ],
+      };
+    },
+  };
 </script>

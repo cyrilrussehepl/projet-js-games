@@ -16,15 +16,15 @@
   </div>
 </template>
 <script>
-export default {
-  components: {
-    FooterWidgetTitle: () => import("@/components/Footer/FooterWidgetTitle"),
-  },
-  data() {
-    return {
-      title: "Contact",
-      phone: "+32 (0)4 279 75 00",
-    };
-  },
-};
+  export default {
+    components: {
+      FooterWidgetTitle: () => import("@/components/Footer/FooterWidgetTitle"),
+    },
+    data() {
+      return {
+        title: "Contact",
+        phone: "+32 (0)4 279 75 00",
+      };
+    },
+  };
 </script>

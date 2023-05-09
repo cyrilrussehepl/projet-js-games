@@ -65,12 +65,12 @@
   <!-- All Games End -->
 </template>
 <script>
-import gameHome from "@/data/games.json";
-export default {
-  data() {
-    return {
-      gameHome,
-    };
-  },
-};
+  import gameHome from "@/data/games.json";
+  export default {
+    data() {
+      return {
+        gameHome,
+      };
+    },
+  };
 </script>

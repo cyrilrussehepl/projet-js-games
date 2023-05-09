@@ -52,7 +52,7 @@
           </div>
           <div class="flex mt-10">
             <NuxtLink
-              to="/playGame"
+              to="/"
               style="background-image: url(/images/others/btn-bg.webp)"
               class="w-230 md:text-2xl md:leading-12 h-73 flex items-center text-white font-bold justify-center font-exo group hover:opacity-80 leading-70 text-xl"
             >
@@ -89,39 +89,39 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
-import { Disqus } from "vue-disqus";
-export default {
-  components: {
-    PrimaryButton: () => import("@/components/Button/PrimaryButton"),
-    Swiper,
-    SwiperSlide,
-    Disqus,
-  },
-  props: ["games"],
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: false,
-        navigation: {
-          nextEl: ".gameslide .gameslide-button-next",
-          prevEl: ".gameslide .gameslide-button-prev",
+  import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+  import { Disqus } from "vue-disqus";
+  export default {
+    components: {
+      PrimaryButton: () => import("@/components/Button/PrimaryButton"),
+      Swiper,
+      SwiperSlide,
+      Disqus,
+    },
+    props: ["games"],
+    data() {
+      return {
+        swiperOption: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          pagination: false,
+          navigation: {
+            nextEl: ".gameslide .gameslide-button-next",
+            prevEl: ".gameslide .gameslide-button-prev",
+          },
         },
-      },
-      gameslide: [
-        {
-          gamingBg: "/images/others/game-details-thumb.webp",
-        },
-        {
-          gamingBg: "/images/others/game-details-thumb.webp",
-        },
-        {
-          gamingBg: "/images/others/game-details-thumb.webp",
-        },
-      ],
-    };
-  },
-};
+        gameslide: [
+          {
+            gamingBg: "/images/others/game-details-thumb.webp",
+          },
+          {
+            gamingBg: "/images/others/game-details-thumb.webp",
+          },
+          {
+            gamingBg: "/images/others/game-details-thumb.webp",
+          },
+        ],
+      };
+    },
+  };
 </script>

@@ -26,26 +26,26 @@
 </template>
 
 <script>
-import matchesData from "@/data/matches.json";
-export default {
-  components: {
-    HeaderSection: () => import("@/components/HeaderSection"),
-    OffCanvasMobileMenu: () =>
-      import("@/components/Header/OffCanvasMobileMenu"),
-    Breadcrumb: () => import("@/components/Breadcrumb"),
-    CounterUp: () => import("@/components/CounterUp"),
-    ContactBanner: () => import("@/components/ContactBanner"),
-    Footer: () => import("@/components/Footer"),
-    AllGames: () => import("@/components/AllGames"),
-  },
-  data() {
-    return {
-      matchesData,
-      navOpen: false,
-      BreadcrumbTitle: "All Games",
-      BreadcrumbSubTitle: "Games",
-      paddingTop: "pt-0",
-    };
-  },
-};
+  import matchesData from "@/data/matches.json";
+  export default {
+    components: {
+      HeaderSection: () => import("@/components/HeaderSection"),
+      OffCanvasMobileMenu: () =>
+        import("@/components/Header/OffCanvasMobileMenu"),
+      Breadcrumb: () => import("@/components/Breadcrumb"),
+      CounterUp: () => import("@/components/CounterUp"),
+      ContactBanner: () => import("@/components/ContactBanner"),
+      Footer: () => import("@/components/Footer"),
+      AllGames: () => import("@/components/AllGames"),
+    },
+    data() {
+      return {
+        matchesData,
+        navOpen: false,
+        BreadcrumbTitle: "All Games",
+        BreadcrumbSubTitle: "Games",
+        paddingTop: "pt-0",
+      };
+    },
+  };
 </script>

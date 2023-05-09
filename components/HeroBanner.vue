@@ -38,9 +38,9 @@
 </template>
 
 <script>
-export default {
-  components: {
-    PrimaryButton: () => import("@/components/Button/PrimaryButton"),
-  },
-};
+  export default {
+    components: {
+      PrimaryButton: () => import("@/components/Button/PrimaryButton"),
+    },
+  };
 </script>

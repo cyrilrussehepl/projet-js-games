@@ -44,17 +44,17 @@
 </template>
 
 <script>
-export default {
-  props: {
-    BreadcrumbTitle: {
-      type: String,
-      required: false,
+  export default {
+    props: {
+      BreadcrumbTitle: {
+        type: String,
+        required: false,
+      },
+      BreadcrumbSubTitle: {
+        type: String,
+        required: false,
+      },
     },
-    BreadcrumbSubTitle: {
-      type: String,
-      required: false,
-    },
-  },
-  components: {},
-};
+    components: {},
+  };
 </script>

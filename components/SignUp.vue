@@ -55,11 +55,11 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      btnName: "Register",
-    };
-  },
-};
+  export default {
+    data() {
+      return {
+        btnName: "Register",
+      };
+    },
+  };
 </script>

@@ -15,33 +15,27 @@
       :BreadcrumbSubTitle="BreadcrumbSubTitle"
     />
 
-    <ContactDetails />
-
-    <GoogleMaps />
-
     <Footer />
   </div>
 </template>
 
 <script>
+  import matchesData from "@/data/matches.json";
   export default {
     components: {
       HeaderSection: () => import("@/components/HeaderSection"),
       OffCanvasMobileMenu: () =>
         import("@/components/Header/OffCanvasMobileMenu"),
       Breadcrumb: () => import("@/components/Breadcrumb"),
-      ContactDetails: () => import("@/components/ContactDetails"),
-      ContactForm: () => import("@/components/ContactForm"),
-      GoogleMaps: () => import("@/components/GoogleMaps"),
-      ContactBanner: () => import("@/components/ContactBanner"),
       Footer: () => import("@/components/Footer"),
     },
     data() {
       return {
+        matchesData,
         navOpen: false,
-        BreadcrumbTitle: "Contact Us",
-        BreadcrumbSubTitle: "Contact-Us",
-        paddingTop: "pt-32",
+        BreadcrumbTitle: "All Games",
+        BreadcrumbSubTitle: "Games",
+        paddingTop: "pt-0",
       };
     },
   };

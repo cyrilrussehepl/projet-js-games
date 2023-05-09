@@ -31,17 +31,17 @@
   </div>
 </template>
 <script>
-import gameHome from "@/data/games.json";
-export default {
-  components: {
-    TitleSection: () => import("@/components/Title/TitleSection"),
-  },
-  data() {
-    return {
-      gameHome,
-      title: "Popular Games",
-      text: "Play our most popular games now",
-    };
-  },
-};
+  import gameHome from "@/data/games.json";
+  export default {
+    components: {
+      TitleSection: () => import("@/components/Title/TitleSection"),
+    },
+    data() {
+      return {
+        gameHome,
+        title: "Popular Games",
+        text: "Play our most popular games now",
+      };
+    },
+  };
 </script>
