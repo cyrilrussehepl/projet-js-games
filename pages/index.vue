@@ -12,19 +12,7 @@
 
     <HeroBanner />
 
-    <!-- <GamingWorld />
-
-    <LiveStream />
-
-    <UpcomingMatchesHome />
-
-    <CounterUp /> -->
-
     <PopularGame />
-
-    <!-- <Testimonial />
-
-    <BlogPost /> -->
 
     <ContactBanner :paddingTop="paddingTop" />
 
@@ -39,13 +27,8 @@ export default {
     HeroBanner: () => import("@/components/HeroBanner"),
     OffCanvasMobileMenu: () =>
       import("@/components/Header/OffCanvasMobileMenu"),
-    GamingWorld: () => import("@/components/GamingWorld"),
-    LiveStream: () => import("@/components/LiveStream"),
-    UpcomingMatchesHome: () => import("@/components/UpcomingMatchesHome"),
     CounterUp: () => import("@/components/CounterUp"),
     PopularGame: () => import("@/components/Games/PopularGame"),
-    Testimonial: () => import("@/components/Testimonial"),
-    BlogPost: () => import("@/components/BlogPost"),
     ContactBanner: () => import("@/components/ContactBanner"),
     Footer: () => import("@/components/Footer"),
   },

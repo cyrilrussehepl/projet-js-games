@@ -18,9 +18,7 @@
 
     <!-- Footer Bottom Start -->
     <div class="bg-gray-800 py-5">
-      <div
-        class="container flex justify-between relative items-center md:flex-row flex-col-reverse"
-      >
+      <div class="container lg:flex justify-between relative items-center">
         <p class="text-gray-500 text-sm uppercase font-medium mb-0">
           © 2023 Mabe by TEAM A using BONX by
           <a
