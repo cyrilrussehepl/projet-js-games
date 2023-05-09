@@ -17,7 +17,9 @@
         <n-link
           :to="`/game/${games.slug}`"
           class="group primary-btn absolute-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
-          style="background-image: url(/images/others/btn-bg.webp)"
+          style="
+            background-image: url(/images/others/btn-bg_contours-roses.webp);
+          "
         >
           {{ games.btnName }}
           <img

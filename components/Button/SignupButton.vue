@@ -3,7 +3,9 @@
     <!-- Button Start -->
     <NuxtLink
       to="/signup"
-      style="background-image: url(/images/others/btn-signup.webp)"
+      style="
+        background-image: url(/images/others/btn-signup_contours-roses.webp);
+      "
       class="signup-btn transition-all group hidden sm:flex"
     >
       Sign up
