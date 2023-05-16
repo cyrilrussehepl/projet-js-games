@@ -1,35 +1,55 @@
 <template>
   <!-- SignUp Section Start -->
   <div class="container">
-    <form id="contact-form" class="flex flex-col max-w-lg mx-auto" action="">
+    <form
+      id="contact-form"
+      class="flex flex-col max-w-lg mx-auto"
+      @submit="mySubmit"
+    >
+      <label for="passwordCk">*Username</label>
       <div class="single-fild">
         <input
           type="text"
           class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
-          placeholder="Name"
+          placeholder="Username"
+          name="username"
         />
       </div>
-      <div class="single-fild">
+      <!-- <div class="single-fild">
         <input
           type="email"
           class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
           placeholder="E-mail"
         />
-      </div>
-      <div class="single-fild">
+      </div> -->
+      <!-- <div class="single-fild">
         <input
           type="text"
           class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
           placeholder="Phone"
         />
-      </div>
+      </div> -->
+      <label for="passwordCk">*Password</label>
       <div class="single-fild">
         <input
           type="password"
           class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
           placeholder="Password"
+          name="password"
         />
       </div>
+      <label for="passwordCk">*Password confirmation</label>
+      <div class="single-fild">
+        <input
+          v-model="modelPasswordCK"
+          type="password"
+          class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
+          placeholder="Password"
+          name="passwordCk"
+        />
+      </div>
+
+      * Required fields
       <div class="single-fild col-span-2">
         <div class="form-btn-wrap flex justify-center w-full mt-16">
           <button
@@ -37,9 +57,11 @@
             value="submit"
             name="submit"
             class="form-btn group primary-btn opacity-100 transition-all uppercase"
-            style="background-image: url(/images/others/btn-bg.webp)"
+            style="
+              background-image: url(/images/others/btn-bg_contours-roses.webp);
+            "
           >
-            {{ btnName }}
+            Register
             <img
               src="/images/icon/arrrow-icon.webp"
               alt="Arrow Icon"
@@ -53,13 +75,8 @@
   </div>
   <!-- SignUp Section End -->
 </template>
+<script setup>
+  // const {handleSubmit} = userForm();
 
-<script>
-  export default {
-    data() {
-      return {
-        btnName: "Register",
-      };
-    },
-  };
+  // var modelPasswordCK = ref('');
 </script>
