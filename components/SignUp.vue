@@ -41,7 +41,6 @@
       <label for="passwordCk">*Password confirmation</label>
       <div class="single-fild">
         <input
-          v-model="modelPasswordCK"
           type="password"
           class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
           placeholder="Password"
@@ -76,7 +75,5 @@
   <!-- SignUp Section End -->
 </template>
 <script setup>
-  // const {handleSubmit} = userForm();
-
-  // var modelPasswordCK = ref('');
+   
 </script>
