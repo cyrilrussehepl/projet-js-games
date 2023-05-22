@@ -2,13 +2,13 @@
    <div class="flex items-center">
       <!-- Button Start -->
       <NuxtLink
-         to="/signup"
+         to="/login"
          style="
             background-image: url(/images/others/btn-signup_contours-roses.webp);
          "
          class="signup-btn transition-all group hidden sm:flex"
       >
-         Sign up
+         Log In
          <img
             class="w-4 h-4 ml-2 group-hover:ml-3 transition-all"
             src="/images/icon/arrrow-icon2.webp"
