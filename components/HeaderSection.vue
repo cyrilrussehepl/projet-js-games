@@ -7,8 +7,10 @@
 
             <MainMenu />
 
-            <SignupButton />
-            <LogInButton />
+            <div class="flex">
+               <SignupButton class="px-5" />
+               <LogInButton />
+            </div>
          </div>
       </div>
    </header>
