@@ -15,6 +15,12 @@
       :BreadcrumbSubTitle="BreadcrumbSubTitle"
     />
 
+    <div class="flex justify-center">
+    <iframe src="https://preeminent-eclair-ec06b7.netlify.app" 
+      frameborder="2" 
+      height="820" width="700"
+      onload="handleIframeLoad"></iframe>
+    </div>
     <Footer />
   </div>
 </template>
@@ -38,5 +44,21 @@
         paddingTop: "pt-0",
       };
     },
+    mounted(){
+      const iframe = document.querySelector("iframe");
+      iframe.onload = this.handleIframeLoad;
+    },
+    methods: {
+    handleIframeLoad() {
+      const username = 'Hexalthy'; // Remplacez par votre nom d'utilisateur réel ou obtenez-le à partir de vos données de session
+      const iframe = document.querySelector("iframe");
+      const message = {
+        username: username
+      };
+      iframe.contentWindow.postMessage(message, '*');
+    }
+  }
   };
+
+  
 </script>
