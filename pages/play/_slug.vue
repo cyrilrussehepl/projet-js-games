@@ -15,15 +15,8 @@
          :BreadcrumbSubTitle="BreadcrumbSubTitle"
       />
 
-      <div class="flex justify-center">
-         <iframe
-            :src="gameHome.gameUrl"
-            frameborder="2"
-            :height="gameHome.gameHeight"
-            :width="gameHome.gameWidth"
-            onload="handleIframeLoad"
-         ></iframe>
-      </div>
+      <GameIframe :game="gameHome" />
+
       <Footer />
    </div>
 </template>
@@ -36,6 +29,7 @@ export default {
       OffCanvasMobileMenu: () =>
          import('@/components/Header/OffCanvasMobileMenu'),
       Breadcrumb: () => import('@/components/Breadcrumb'),
+      GameIframe: () => import('@/components/Games/GameIframe.vue'),
       Footer: () => import('@/components/Footer'),
    },
    data() {
@@ -51,18 +45,6 @@ export default {
       this.gameHome = gameHome.find(
          (games) => games.slug == this.$route.params.slug
       );
-      const iframe = document.querySelector('iframe');
-      iframe.onload = this.handleIframeLoad;
-   },
-   methods: {
-      handleIframeLoad() {
-         const username = 'Hexalthy';
-         const iframe = document.querySelector('iframe');
-         const message = {
-            username: username,
-         };
-         iframe.contentWindow.postMessage(message, '*');
-      },
    },
 };
 </script>
