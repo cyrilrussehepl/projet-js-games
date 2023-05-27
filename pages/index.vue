@@ -1,42 +1,44 @@
 <template>
-  <div
-    class="bg-cover bg-gray-800"
-    style="background-image: url(/images/bg/body-bg.webp)"
-  >
-    <HeaderSection />
+   <div
+      class="bg-cover bg-gray-800"
+      style="background-image: url(/images/bg/body-bg.webp)"
+   >
+      <HeaderSection />
 
-    <OffCanvasMobileMenu
-      :class="{ 'show-mobile-menu': navOpen }"
-      @togglenav="navOpen = !navOpen"
-    />
+      <OffCanvasMobileMenu
+         :class="{ 'show-mobile-menu': navOpen }"
+         @togglenav="navOpen = !navOpen"
+      />
 
-    <HeroBanner />
+      <HeroBanner />
 
-    <PopularGame />
+      <PopularGame />
 
-    <ContactBanner :paddingTop="paddingTop" />
+      <CounterUp />
 
-    <Footer />
-  </div>
+      <ContactBanner :paddingTop="paddingTop" />
+
+      <Footer />
+   </div>
 </template>
 
 <script>
-  export default {
-    components: {
-      HeaderSection: () => import("@/components/HeaderSection"),
-      HeroBanner: () => import("@/components/HeroBanner"),
+export default {
+   components: {
+      HeaderSection: () => import('@/components/HeaderSection'),
+      HeroBanner: () => import('@/components/HeroBanner'),
       OffCanvasMobileMenu: () =>
-        import("@/components/Header/OffCanvasMobileMenu"),
-      CounterUp: () => import("@/components/CounterUp"),
-      PopularGame: () => import("@/components/Games/PopularGame"),
-      ContactBanner: () => import("@/components/ContactBanner"),
-      Footer: () => import("@/components/Footer"),
-    },
-    data() {
+         import('@/components/Header/OffCanvasMobileMenu'),
+      CounterUp: () => import('@/components/CounterUp'),
+      PopularGame: () => import('@/components/Games/PopularGame'),
+      ContactBanner: () => import('@/components/ContactBanner'),
+      Footer: () => import('@/components/Footer'),
+   },
+   data() {
       return {
-        navOpen: false,
-        paddingTop: "pt-32",
+         navOpen: false,
+         paddingTop: 'pt-32',
       };
-    },
-  };
+   },
+};
 </script>

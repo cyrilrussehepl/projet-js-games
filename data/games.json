@@ -35,25 +35,25 @@
       "gameWidth": ""
    },
    {
-      "gameImage": "/images/others/popular-game-thumb2.webp",
+      "gameImage": "/images/others/Advanced-wars.jpg",
       "btnName": "Game Details",
       "title": "Advanced Wars",
       "slug": "3",
       "category": "2",
       "descriptions": [""],
-      "presentationImg": ["/images/others/popular-game-thumb2.webp"],
+      "presentationImg": ["/images/others/Advanced-wars.jpg"],
       "gameUrl": "",
       "gameHeight": "",
       "gameWidth": ""
    },
    {
-      "gameImage": "/images/others/popular-game-thumb2.webp",
+      "gameImage": "/images/others/give-up.jpg",
       "btnName": "Game Details",
       "title": "Give Up",
       "slug": "4",
       "category": "2",
       "descriptions": [""],
-      "presentationImg": ["/images/others/popular-game-thumb2.webp"],
+      "presentationImg": ["/images/others/give-up.jpg"],
       "gameUrl": "",
       "gameHeight": "",
       "gameWidth": ""
