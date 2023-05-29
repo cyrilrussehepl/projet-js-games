@@ -25,14 +25,18 @@
       "title": "Jetpack Joyride",
       "slug": "2",
       "category": "2",
-      "descriptions": [""],
+      "descriptions": [
+         "Jetpack Joyride is a popular mobile game where players control Barry Steakfries, who has a powerful jetpack. The goal is to guide Barry through a laboratory filled with obstacles, collect coins, and avoid hazards like lasers and missiles. The objective is to achieve the highest distance possible and set new high scores.",
+         "Push your limits, beat records, and discover why this addictive game is a favorite among players worldwide!"
+      ],
       "presentationImg": [
          "/images/others/jetpack-joyride.jpg",
-         "/images/others/jetpack-joyride.jpg"
+         "/images/others/jetpack-joyride.jpg",
+         "/images/others/Jetpack3.png"
       ],
-      "gameUrl": "",
-      "gameHeight": "",
-      "gameWidth": ""
+      "gameUrl": "/JetpackJoyRide/index.html",
+      "gameHeight": "1050",
+      "gameWidth": "1050"
    },
    {
       "gameImage": "/images/others/Advanced-wars.jpg",
