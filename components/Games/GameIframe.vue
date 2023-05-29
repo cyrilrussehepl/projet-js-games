@@ -12,13 +12,6 @@
 
 <script>
 export default {
-   components: {
-      HeaderSection: () => import('@/components/HeaderSection'),
-      OffCanvasMobileMenu: () =>
-         import('@/components/Header/OffCanvasMobileMenu'),
-      Breadcrumb: () => import('@/components/Breadcrumb'),
-      Footer: () => import('@/components/Footer'),
-   },
    props: ['game'],
    mounted() {
       const iframe = document.querySelector('iframe');

@@ -15,9 +15,9 @@
          "/images/others/tetris.png",
          "/images/others/tetris.png"
       ],
-      "gameUrl": "https://preeminent-eclair-ec06b7.netlify.app",
-      "gameHeight": "820",
-      "gameWidth": "700"
+      "gameUrl": "https://tetris-hepl-js.netlify.app/",
+      "gameHeight": "724",
+      "gameWidth": "633"
    },
    {
       "gameImage": "/images/others/jetpack-joyride.jpg",
