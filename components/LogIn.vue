@@ -4,9 +4,7 @@
          <p v-if="errorConnection" class="Error">
             Invalid connection. Please check your username or password.
          </p>
-         <label for="passwordCk" :class="{ Error: username === '' }"
-            >*Username</label
-         >
+         <label for="passwordCk">*Username</label>
          <div class="single-fild">
             <input
                type="text"
@@ -18,9 +16,7 @@
                required
             />
          </div>
-         <label for="passwordCk" :class="{ Error: password === '' }"
-            >*Password</label
-         >
+         <label for="passwordCk">*Password</label>
          <div class="single-fild">
             <input
                type="password"
