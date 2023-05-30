@@ -18,11 +18,20 @@
 
       <ContactBanner :paddingTop="paddingTop" />
 
+      <div>
+         <p v-if="isAuthenticated">Welcome, {{ username }}!</p>
+         <p v-else>Please log in.</p>
+         <button v-if="isAuthenticated" @click="handleLogout">Logout</button>
+         <button v-else @click="handleLogin">Login</button>
+      </div>
+
       <Footer />
    </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
+
 export default {
    components: {
       HeaderSection: () => import('@/components/HeaderSection'),
@@ -39,6 +48,24 @@ export default {
          navOpen: false,
          paddingTop: 'pt-32',
       };
+   },
+   computed: {
+      ...mapState(['isAuthenticated', 'username']),
+   },
+   methods: {
+      ...mapMutations(['login', 'logout']),
+      handleLogin() {
+         // Effectuez le processus de connexion (par exemple, une requête API)
+
+         // Une fois la connexion réussie, appelez la mutation 'login' pour mettre à jour l'état
+         this.login('utilisateur123');
+      },
+      handleLogout() {
+         // Effectuez le processus de déconnexion (par exemple, une requête API)
+
+         // Une fois la déconnexion réussie, appelez la mutation 'logout' pour mettre à jour l'état
+         this.logout();
+      },
    },
 };
 </script>
