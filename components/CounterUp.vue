@@ -16,7 +16,7 @@
                   :class="count.className"
                   :startVal="count.startVal"
                   :endVal="count.endVal"
-                  :duration="1500"
+                  :duration="2000"
                   :autoplay="true"
                ></countTo>
                <p class="uppercase mt-3 sm:mt-5 text-base lg:text-lg">
@@ -41,8 +41,8 @@ export default {
          counter: [
             {
                startVal: 0,
-               endVal: 200,
-               className: 'text-yellow',
+               endVal: 0,
+               className: 'text-bright',
                text: 'Players',
             },
             {
@@ -53,14 +53,33 @@ export default {
             },
             {
                startVal: 0,
-               endVal: 10,
-               className: 'text-punch',
+               endVal: 654,
+               className: 'text-yellow',
                text: 'Game Played',
             },
          ],
       };
    },
+   mounted() {
+      this.fetchNBPlayer();
+   },
    methods: {
+      fetchNBPlayer() {
+         fetch(
+            'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/getNbrPlayers',
+            {
+               method: 'GET',
+            }
+         )
+            .then((response) => response.json())
+            .then((data) => {
+               this.counter[0].endVal = data.nbr_players;
+               console.log(data.nbr_players);
+            })
+            .catch((error) => {
+               console.log('erreur:', error);
+            });
+      },
       visibilityChanged(isVisible) {
          this.commentsVisible = isVisible;
       },
