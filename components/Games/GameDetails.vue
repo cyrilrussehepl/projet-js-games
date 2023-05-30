@@ -78,11 +78,23 @@
             <div class="grid grid-cols-2 gap-5 text-white">
                <div class="additional_information_text">
                   <h4 class="font-bold mb-5">Player</h4>
-                  <p class="text-gray-400">Hexalthy</p>
+                  <p
+                     v-for="username in players"
+                     :key="username"
+                     class="text-gray-400"
+                  >
+                     {{ username }}
+                  </p>
                </div>
                <div class="additional_information_text">
                   <h4 class="font-bold mb-5">Score</h4>
-                  <p class="text-gray-400">1253</p>
+                  <p
+                     v-for="score in scores"
+                     :key="score"
+                     class="text-gray-400"
+                  >
+                     {{ score }}
+                  </p>
                </div>
             </div>
          </div>
@@ -93,6 +105,7 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import { Disqus } from 'vue-disqus';
+import router from  "vue-router";
 export default {
    components: {
       PrimaryButton: () => import('@/components/Button/PrimaryButton'),
@@ -102,6 +115,7 @@ export default {
    },
    props: ['games'],
    data() {
+     
       return {
          swiperOption: {
             slidesPerView: 1,
@@ -123,7 +137,65 @@ export default {
                gamingBg: '/images/others/game-details-thumb.webp',
             },
          ],
+         scores : [],
+         players : [],
       };
+   },
+   created() {
+      this.fetchData();
+   },
+
+   beforeRouteUpdate(to, from, next) {
+      this.fetchData();
+      next();
+   },
+
+   methods: {
+      fetchData() {
+         fetch(
+            'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/getScores',
+            {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({
+                  name: this.games.title,
+               }),
+            }
+         )
+            .then((response) => {
+               if (response.ok) {
+                  console.log(this.games.title)
+                  return response.json();
+                 
+               }
+               else {
+                  console.log("merde")
+               throw new Error('Error while fetching data');
+               }
+              
+            })
+            .then((data) => {
+               console.log(data)
+               if (Array.isArray(data) && data.length > 0) {
+                  // Parcourir chaque objet dans la liste
+                  console.log(data)
+                  data.forEach(obj => {
+                     // Accéder aux propriétés score et username de chaque objet
+                     const score = obj.score;
+                     const username = obj.username;
+
+                     // Ajouter les valeurs aux tableaux scores et players
+                     this.scores.push(score);
+                     this.players.push(username);
+                  });
+               }
+            })
+            .catch((err) => {
+               console.log('Error while get pb request : ', err);
+            });
+      },
    },
 };
 </script>
