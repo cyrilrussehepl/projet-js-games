@@ -55,15 +55,9 @@ export default {
    methods: {
       ...mapMutations(['login', 'logout']),
       handleLogin() {
-         // Effectuez le processus de connexion (par exemple, une requête API)
-
-         // Une fois la connexion réussie, appelez la mutation 'login' pour mettre à jour l'état
          this.login('utilisateur123');
       },
       handleLogout() {
-         // Effectuez le processus de déconnexion (par exemple, une requête API)
-
-         // Une fois la déconnexion réussie, appelez la mutation 'logout' pour mettre à jour l'état
          this.logout();
       },
    },
