@@ -7,7 +7,11 @@
 
             <MainMenu />
 
-            <div class="flex">
+            <div v-if="isAuthenticated" class="flex justify-center">
+               <p class="signup-btn my-1">{{ username }}</p>
+               <LogOutButton />
+            </div>
+            <div v-else class="flex">
                <SignupButton class="px-5" />
                <LogInButton />
             </div>
@@ -18,12 +22,24 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
+
 export default {
    components: {
       HeaderLogo: () => import('@/components/Header/HeaderLogo'),
       MainMenu: () => import('@/components/Header/MainMenu'),
       SignupButton: () => import('@/components/Button/SignupButton'),
       LogInButton: () => import('@/components/Button/LogInButton'),
+      LogOutButton: () => import('@/components/Button/LogOutButton'),
+   },
+   computed: {
+      ...mapState(['isAuthenticated', 'username']),
+   },
+   methods: {
+      ...mapMutations(['logout']),
+      handleLogout() {
+         this.logout();
+      },
    },
 
    data() {
