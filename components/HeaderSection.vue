@@ -7,8 +7,8 @@
 
             <MainMenu />
 
-            <div v-if="isAuthenticated" class="flex">
-               <p class="signup-btn">{{ username }}</p>
+            <div v-if="isAuthenticated" class="flex justify-center">
+               <p class="signup-btn my-1">{{ username }}</p>
                <LogOutButton />
             </div>
             <div v-else class="flex">
