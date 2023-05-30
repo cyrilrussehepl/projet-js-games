@@ -1,14 +1,9 @@
 <template>
    <!-- SignUp Section Start -->
    <div class="container">
-      <form
-         id="contact-form"
-         class="flex flex-col max-w-lg mx-auto"
-         @submit="mySubmit"
-      >
-         <label for="passwordCk" :class="{ Error: username === '' }"
-            >*Username</label
-         >
+      <div id="contact-form" class="flex flex-col max-w-lg mx-auto">
+         <label for="passwordCk">*Username</label>
+         <p v-if="usernameIsUsed" class="Error">This username already exist</p>
          <div class="single-fild">
             <input
                type="text"
@@ -19,12 +14,9 @@
                required
             />
          </div>
-         <label for="passwordCk" :class="{ Error: password === '' }"
-            >*Password</label
-         >
+         <label for="passwordCk">*Password</label>
          <p v-if="!isValidPassword" class="Error">
-            Password must contain at least one uppercase letter and one
-            lowercase letter.
+            must contain at least one uppercase letter and one lowercase letter.
          </p>
          <div class="single-fild">
             <input
@@ -36,9 +28,7 @@
                required
             />
          </div>
-         <label for="passwordCk" :class="{ Error: password2 === '' }"
-            >*Password confirmation</label
-         >
+         <label for="passwordCk">*Password confirmation</label>
          <p v-if="passwordMismatch" class="Error">Passwords do not match.</p>
 
          <div class="single-fild">
@@ -56,9 +46,7 @@
          <div class="single-fild col-span-2">
             <div class="form-btn-wrap flex justify-center w-full mt-16">
                <button
-                  type="submit"
-                  value="submit"
-                  name="submit"
+                  @click="mySubmit"
                   class="form-btn group primary-btn opacity-100 transition-all uppercase"
                   style="
                      background-image: url(/images/others/btn-bg_contours-roses.webp);
@@ -74,22 +62,25 @@
                <p class="form-messege"></p>
             </div>
          </div>
-      </form>
+      </div>
    </div>
    <!-- SignUp Section End -->
 </template>
 <style></style>
 <script>
+import { mapState, mapMutations } from 'vuex';
 export default {
    data() {
       return {
          username: '',
          password: '',
          password2: '',
+         usernameIsUsed: false,
       };
    },
    computed: {
       passwordMismatch() {
+         if (this.password === '' || this.password2 === '') return false;
          return this.password !== this.password2;
       },
       isValidPassword() {
@@ -99,14 +90,45 @@ export default {
          const regex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
          return regex.test(this.password);
       },
+      ...mapState(['isAuthenticated', 'username']),
    },
    methods: {
+      ...mapMutations(['login', 'logout']),
       mySubmit() {
-         // Vous pouvez ajouter ici la logique de traitement du formulaire
-         // Par exemple, envoyer les données au serveur ou effectuer des validations supplémentaires.
-
-         console.log('ID:', this.id);
-         console.log('Mot de passe:', this.password);
+         if (
+            this.password === this.password2 &&
+            this.password != '' &&
+            this.username != ''
+         ) {
+            fetch(
+               'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/register',
+               {
+                  method: 'POST',
+                  headers: {
+                     'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                     username: this.username,
+                     password: this.password,
+                  }),
+               }
+            )
+               .then((response) => {
+                  return response.json();
+               })
+               .then((data) => {
+                  console.log(data);
+                  if (data.inserted == true) {
+                     this.$router.replace('/');
+                     this.login(this.username);
+                  } else {
+                     this.usernameIsUsed = true;
+                  }
+               })
+               .catch((err) => {
+                  console.log('Error while get pb request : ', err);
+               });
+         }
       },
    },
 };

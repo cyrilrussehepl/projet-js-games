@@ -18,12 +18,12 @@
 
       <ContactBanner :paddingTop="paddingTop" />
 
-      <div>
+      <!-- <div>
          <p v-if="isAuthenticated">Welcome, {{ username }}!</p>
          <p v-else>Please log in.</p>
          <button v-if="isAuthenticated" @click="handleLogout">Logout</button>
          <button v-else @click="handleLogin">Login</button>
-      </div>
+      </div>   -->
 
       <Footer />
    </div>
@@ -49,10 +49,10 @@ export default {
          paddingTop: 'pt-32',
       };
    },
-   computed: {
+   /* computed: {
       ...mapState(['isAuthenticated', 'username']),
    },
-   methods: {
+    methods: {
       ...mapMutations(['login', 'logout']),
       handleLogin() {
          this.login('utilisateur123');
@@ -60,6 +60,6 @@ export default {
       handleLogout() {
          this.logout();
       },
-   },
+   },*/
 };
 </script>

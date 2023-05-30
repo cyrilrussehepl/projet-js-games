@@ -34,7 +34,7 @@
          "/images/others/jetpack-joyride.jpg",
          "/images/others/Jetpack3.png"
       ],
-      "gameUrl": "/JetpackJoyRide/index.html",
+      "gameUrl": "https://eloquent-blini-322340.netlify.app/",
       "gameHeight": "1050",
       "gameWidth": "1050"
    },

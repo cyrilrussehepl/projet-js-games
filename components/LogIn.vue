@@ -1,10 +1,9 @@
 <template>
    <div class="container">
-      <form
-         id="contact-form"
-         class="flex flex-col max-w-lg mx-auto"
-         @submit="mySubmit"
-      >
+      <div id="contact-form" class="flex flex-col max-w-lg mx-auto">
+         <p v-if="errorConnection" class="Error">
+            Invalid connection. Please check your username or password.
+         </p>
          <label for="passwordCk" :class="{ Error: username === '' }"
             >*Username</label
          >
@@ -36,9 +35,7 @@
          <div class="single-fild col-span-2">
             <div class="form-btn-wrap flex justify-center w-full mt-16">
                <button
-                  type="submit"
-                  value="submit"
-                  name="submit"
+                  @click="mySubmit"
                   class="form-btn group primary-btn opacity-100 transition-all uppercase"
                   style="
                      background-image: url(/images/others/btn-bg_contours-roses.webp);
@@ -54,28 +51,57 @@
                <p class="form-messege"></p>
             </div>
          </div>
-      </form>
+      </div>
    </div>
 </template>
-<style>
-.Error {
-   color: red;
-}
-</style>
+<style></style>
 <script>
+import { mapState, mapMutations } from 'vuex';
 export default {
    data() {
       return {
          username: '',
          password: '',
+         errorConnection: false,
       };
    },
+   computed: {
+      ...mapState(['isAuthenticated', 'username']),
+   },
    methods: {
+      ...mapMutations(['login', 'logout']),
       mySubmit() {
-         // Vous pouvez ajouter ici la logique de traitement du formulaire
-         // Par exemple, envoyer les données au serveur ou effectuer des validations supplémentaires.
-         console.log('ID:', this.id);
-         console.log('Mot de passe:', this.password);
+         {
+            fetch(
+               'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/login',
+               {
+                  method: 'POST',
+                  headers: {
+                     'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                     username: this.username,
+                     password: this.password,
+                  }),
+               }
+            )
+               .then((response) => {
+                  return response.json();
+               })
+               .then((data) => {
+                  console.log(data);
+                  if (data.login == true) {
+                     this.$router.replace('/');
+                     this.login(this.username);
+                  } else {
+                     console.log(data);
+                     this.errorConnection = true;
+                  }
+               })
+               .catch((err) => {
+                  console.log('Error while get pb request : ', err);
+               });
+         }
       },
    },
 };
