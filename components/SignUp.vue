@@ -16,11 +16,16 @@
                placeholder="Username"
                name="username"
                v-model="username"
+               required
             />
          </div>
          <label for="passwordCk" :class="{ Error: password === '' }"
             >*Password</label
          >
+         <p v-if="!isValidPassword" class="Error">
+            Password must contain at least one uppercase letter and one
+            lowercase letter.
+         </p>
          <div class="single-fild">
             <input
                type="password"
@@ -28,11 +33,14 @@
                placeholder="Password"
                name="password"
                v-model="password"
+               required
             />
          </div>
          <label for="passwordCk" :class="{ Error: password2 === '' }"
             >*Password confirmation</label
          >
+         <p v-if="passwordMismatch" class="Error">Passwords do not match.</p>
+
          <div class="single-fild">
             <input
                type="password"
@@ -40,6 +48,7 @@
                placeholder="Password"
                name="passwordCk"
                v-model="password2"
+               required
             />
          </div>
 
@@ -79,10 +88,23 @@ export default {
          password2: '',
       };
    },
+   computed: {
+      passwordMismatch() {
+         return this.password !== this.password2;
+      },
+      isValidPassword() {
+         if (this.password === '') {
+            return true;
+         }
+         const regex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+         return regex.test(this.password);
+      },
+   },
    methods: {
       mySubmit() {
          // Vous pouvez ajouter ici la logique de traitement du formulaire
          // Par exemple, envoyer les données au serveur ou effectuer des validations supplémentaires.
+
          console.log('ID:', this.id);
          console.log('Mot de passe:', this.password);
       },
