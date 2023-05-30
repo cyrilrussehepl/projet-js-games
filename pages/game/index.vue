@@ -37,7 +37,6 @@ export default {
    },
    data() {
       return {
-         matchesData,
          navOpen: false,
          BreadcrumbTitle: 'All Games',
          BreadcrumbSubTitle: 'Games',
