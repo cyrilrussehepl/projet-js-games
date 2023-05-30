@@ -15,10 +15,7 @@
 
          <div class="gameslide my-15">
             <swiper class="swiper" :options="swiperOption">
-               <swiper-slide
-                  v-for="gameImg in games.presentationImg"
-                  :key="imageIndex"
-               >
+               <swiper-slide v-for="gameImg in games.presentationImg">
                   <div class="relative">
                      <img
                         class="sm:h-full h-64 w-full object-cover"
@@ -101,7 +98,7 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import { Disqus } from 'vue-disqus';
-
+import router from 'vue-router';
 export default {
    components: {
       PrimaryButton: () => import('@/components/Button/PrimaryButton'),
@@ -136,13 +133,10 @@ export default {
          players: [],
       };
    },
-   created() {
-      this.fetchData();
-   },
-
-   beforeRouteUpdate(to, from, next) {
-      this.fetchData();
-      next();
+   mounted() {
+      setTimeout(() => {
+         this.fetchData();
+      }, 100);
    },
 
    methods: {
@@ -172,12 +166,13 @@ export default {
                console.log(data);
                if (Array.isArray(data) && data.length > 0) {
                   // Parcourir chaque objet dans la liste
-                  console.log(data)
-                  data.forEach(obj => {
+                  console.log(data);
+                  data.forEach((obj) => {
                      // Accéder aux propriétés score et username de chaque objet
                      const score = obj.score;
                      const username = obj.username;
 
+                     // Ajouter les valeurs aux tableaux scores et players
                      this.scores.push(score);
                      this.players.push(username);
                   });
