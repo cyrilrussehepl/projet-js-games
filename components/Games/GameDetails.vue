@@ -15,7 +15,10 @@
 
          <div class="gameslide my-15">
             <swiper class="swiper" :options="swiperOption">
-               <swiper-slide v-for="gameImg in games.presentationImg">
+               <swiper-slide
+                  v-for="gameImg in games.presentationImg"
+                  :key="imageIndex"
+               >
                   <div class="relative">
                      <img
                         class="sm:h-full h-64 w-full object-cover"
@@ -143,8 +146,7 @@ export default {
    },
 
    beforeRouteUpdate(to, from, next) {
-      this.fetchData();
-      next();
+     
    },
 
    methods: {
@@ -176,14 +178,11 @@ export default {
             .then((data) => {
                console.log(data)
                if (Array.isArray(data) && data.length > 0) {
-                  // Parcourir chaque objet dans la liste
                   console.log(data)
                   data.forEach(obj => {
-                     // Accéder aux propriétés score et username de chaque objet
                      const score = obj.score;
                      const username = obj.username;
 
-                     // Ajouter les valeurs aux tableaux scores et players
                      this.scores.push(score);
                      this.players.push(username);
                   });

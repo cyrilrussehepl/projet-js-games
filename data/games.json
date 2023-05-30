@@ -46,9 +46,9 @@
       "category": "2",
       "descriptions": [""],
       "presentationImg": ["/images/others/Advanced-wars.jpg"],
-      "gameUrl": "",
-      "gameHeight": "",
-      "gameWidth": ""
+      "gameUrl": "https://vocal-crisp-2785c1.netlify.app/",
+      "gameHeight": "550",
+      "gameWidth": "970"
    },
    {
       "gameImage": "/images/others/give-up.jpg",
