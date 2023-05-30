@@ -85,11 +85,7 @@
                </div>
                <div class="additional_information_text">
                   <h4 class="font-bold mb-5">Score</h4>
-                  <p
-                     v-for="score in scores"
-                     :key="score"
-                     class="text-gray-400"
-                  >
+                  <p v-for="score in scores" :key="score" class="text-gray-400">
                      {{ score }}
                   </p>
                </div>
@@ -102,7 +98,7 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import { Disqus } from 'vue-disqus';
-import router from  "vue-router";
+
 export default {
    components: {
       PrimaryButton: () => import('@/components/Button/PrimaryButton'),
@@ -112,7 +108,6 @@ export default {
    },
    props: ['games'],
    data() {
-     
       return {
          swiperOption: {
             slidesPerView: 1,
@@ -134,17 +129,14 @@ export default {
                gamingBg: '/images/others/game-details-thumb.webp',
             },
          ],
-         scores : [],
-         players : [],
+         scores: [],
+         players: [],
       };
    },
-   created() {
-      this.fetchData();
-   },
-
-   beforeRouteUpdate(to, from, next) {
-      this.fetchData();
-      next();
+   mounted() {
+      setTimeout(() => {
+         this.fetchData();
+      }, 100);
    },
 
    methods: {
@@ -163,22 +155,19 @@ export default {
          )
             .then((response) => {
                if (response.ok) {
-                  console.log(this.games.title)
+                  console.log(this.games.title);
                   return response.json();
-                 
+               } else {
+                  console.log('merde');
+                  throw new Error('Error while fetching data');
                }
-               else {
-                  console.log("merde")
-               throw new Error('Error while fetching data');
-               }
-              
             })
             .then((data) => {
-               console.log(data)
+               console.log(data);
                if (Array.isArray(data) && data.length > 0) {
                   // Parcourir chaque objet dans la liste
-                  console.log(data)
-                  data.forEach(obj => {
+                  console.log(data);
+                  data.forEach((obj) => {
                      // Accéder aux propriétés score et username de chaque objet
                      const score = obj.score;
                      const username = obj.username;
