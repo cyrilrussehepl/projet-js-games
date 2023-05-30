@@ -5,22 +5,31 @@
          class="flex flex-col max-w-lg mx-auto"
          @submit="mySubmit"
       >
-         <label for="passwordCk">*Username</label>
+         <label for="passwordCk" :class="{ Error: username === '' }"
+            >*Username</label
+         >
          <div class="single-fild">
             <input
                type="text"
                class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
                placeholder="Username"
                name="username"
+               id="username"
+               v-model="username"
+               required
             />
          </div>
-         <label for="passwordCk">*Password</label>
+         <label for="passwordCk" :class="{ Error: password === '' }"
+            >*Password</label
+         >
          <div class="single-fild">
             <input
                type="password"
                class="px-6 h-14 mb-6 text-white border-secondary-80 bg-secondary-100 hover:border-primary transition-all border-2 border-solid block rounded-md w-full focus:outline-none"
                placeholder="Password"
                name="password"
+               v-model="password"
+               required
             />
          </div>
          * Required fields
@@ -47,6 +56,27 @@
          </div>
       </form>
    </div>
-   <!-- SignUp Section End -->
 </template>
-<script setup></script>
+<style>
+.Error {
+   color: red;
+}
+</style>
+<script>
+export default {
+   data() {
+      return {
+         username: '',
+         password: '',
+      };
+   },
+   methods: {
+      mySubmit() {
+         // Vous pouvez ajouter ici la logique de traitement du formulaire
+         // Par exemple, envoyer les données au serveur ou effectuer des validations supplémentaires.
+         console.log('ID:', this.id);
+         console.log('Mot de passe:', this.password);
+      },
+   },
+};
+</script>
