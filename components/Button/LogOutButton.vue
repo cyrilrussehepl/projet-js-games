@@ -1,21 +1,19 @@
 <template>
    <div class="flex items-center">
       <!-- Button Start -->
-      <button @click="handleLogout">
-         <NuxtLink
-            to="/"
-            style="
-               background-image: url(/images/others/btn-signup_contours-roses.webp);
-            "
-            class="signup-btn transition-all group hidden sm:flex"
-         >
-            Log Out
-            <img
-               class="w-4 h-4 ml-2 group-hover:ml-3 transition-all"
-               src="/images/icon/arrrow-icon2.webp"
-               alt="Arrow Icon"
-            />
-         </NuxtLink>
+      <button
+         @click="handleLogout"
+         style="
+            background-image: url(/images/others/btn-signup_contours-roses.webp);
+         "
+         class="signup-btn transition-all group hidden sm:flex"
+      >
+         Log Out
+         <img
+            class="w-4 h-4 ml-2 group-hover:ml-3 transition-all"
+            src="/images/icon/arrrow-icon2.webp"
+            alt="Arrow Icon"
+         />
       </button>
       <!-- Button End -->
 
