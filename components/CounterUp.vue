@@ -75,7 +75,6 @@ export default {
             .then((response) => response.json())
             .then((data) => {
                this.counter[0].endVal = data.nbr_players;
-               console.log(data.nbr_players);
             })
             .catch((error) => {
                console.log('erreur:', error);
@@ -91,7 +90,6 @@ export default {
             .then((response) => response.json())
             .then((data) => {
                this.counter[1].endVal = data.nbr_games;
-               console.log(data.nbr_players);
             })
             .catch((error) => {
                console.log('erreur:', error);

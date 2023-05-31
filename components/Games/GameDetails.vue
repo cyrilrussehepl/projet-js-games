@@ -155,18 +155,14 @@ export default {
          )
             .then((response) => {
                if (response.ok) {
-                  console.log(this.games.title);
                   return response.json();
                } else {
-                  console.log('merde');
                   throw new Error('Error while fetching data');
                }
             })
             .then((data) => {
-               console.log(data);
                if (Array.isArray(data) && data.length > 0) {
                   // Parcourir chaque objet dans la liste
-                  console.log(data);
                   data.forEach((obj) => {
                      // Accéder aux propriétés score et username de chaque objet
                      const score = obj.score;

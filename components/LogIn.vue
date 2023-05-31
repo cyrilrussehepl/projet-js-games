@@ -85,12 +85,10 @@ export default {
                   return response.json();
                })
                .then((data) => {
-                  console.log(data);
                   if (data.login == true) {
                      this.$router.replace('/');
                      this.login(this.username);
                   } else {
-                     console.log(data);
                      this.errorConnection = true;
                   }
                })

@@ -125,7 +125,6 @@ export default {
                   return response.json();
                })
                .then((data) => {
-                  console.log(data);
                   if (data.inserted == true) {
                      this.$router.replace('/');
                      this.login(this.username);
