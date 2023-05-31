@@ -47,7 +47,7 @@ export default {
             },
             {
                startVal: 0,
-               endVal: 4,
+               endVal: 0,
                className: 'text-bright',
                text: 'Total Games',
             },
@@ -61,10 +61,11 @@ export default {
       };
    },
    mounted() {
-      this.fetchNBPlayer();
+      this.fetchNBPlayers();
+      this.fetchNBGames();
    },
    methods: {
-      fetchNBPlayer() {
+      fetchNBPlayers() {
          fetch(
             'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/getNbrPlayers',
             {
@@ -74,6 +75,22 @@ export default {
             .then((response) => response.json())
             .then((data) => {
                this.counter[0].endVal = data.nbr_players;
+               console.log(data.nbr_players);
+            })
+            .catch((error) => {
+               console.log('erreur:', error);
+            });
+      },
+      fetchNBGames() {
+         fetch(
+            'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/getNbrGames',
+            {
+               method: 'GET',
+            }
+         )
+            .then((response) => response.json())
+            .then((data) => {
+               this.counter[1].endVal = data.nbr_games;
                console.log(data.nbr_players);
             })
             .catch((error) => {

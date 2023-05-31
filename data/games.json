@@ -12,8 +12,7 @@
       ],
       "presentationImg": [
          "/images/others/tetris.png",
-         "/images/others/tetris.png",
-         "/images/others/tetris.png"
+         "/images/others/Tetris-presentation-image.PNG"
       ],
       "gameUrl": "https://tetris-hepl-js.netlify.app/",
       "gameHeight": "724",
