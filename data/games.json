@@ -30,7 +30,6 @@
       ],
       "presentationImg": [
          "/images/others/jetpack-joyride.jpg",
-         "/images/others/jetpack-joyride.jpg",
          "/images/others/Jetpack3.png"
       ],
       "gameUrl": "https://eloquent-blini-322340.netlify.app/",
@@ -43,8 +42,14 @@
       "title": "Advanced Wars",
       "slug": "3",
       "category": "3",
-      "descriptions": [""],
-      "presentationImg": ["/images/others/Advanced-wars.jpg"],
+      "descriptions": [
+         ""
+      ],
+      "presentationImg": [
+         "/images/others/Advanced-wars.jpg",
+         "/images/others/MainMenuAdanceWar.png",
+         "/images/others/MainPanelForGameAdvanceWar.png"
+      ],
       "gameUrl": "https://vocal-crisp-2785c1.netlify.app/",
       "gameHeight": "550",
       "gameWidth": "970"
@@ -55,8 +60,12 @@
       "title": "Give Up",
       "slug": "4",
       "category": "1",
-      "descriptions": [""],
-      "presentationImg": ["/images/others/give-up.jpg"],
+      "descriptions": [
+         ""
+      ],
+      "presentationImg": [
+         "/images/others/give-up.jpg"
+      ],
       "gameUrl": "",
       "gameHeight": "",
       "gameWidth": ""
