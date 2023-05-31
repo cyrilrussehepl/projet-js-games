@@ -4,6 +4,9 @@
       <div id="contact-form" class="flex flex-col max-w-lg mx-auto">
          <label for="passwordCk">*Username</label>
          <p v-if="usernameIsUsed" class="Error">This username already exist</p>
+         <p v-if="isValidUsername == false" class="Error">
+            Please enter only alphabetical characters.
+         </p>
          <div class="single-fild">
             <input
                type="text"
@@ -90,6 +93,11 @@ export default {
          const regex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
          return regex.test(this.password);
       },
+      isValidUsername() {
+         if (this.username === '') return true;
+         const regex = /^[a-zA-Z]+$/;
+         return regex.test(this.username);
+      },
       ...mapState(['isAuthenticated', 'username']),
    },
    methods: {
@@ -98,7 +106,7 @@ export default {
          if (
             this.password === this.password2 &&
             this.password != '' &&
-            this.username != ''
+            this.isValidUsername
          ) {
             fetch(
                'https://europe-west1.gcp.data.mongodb-api.com/app/application-0-ptcis/endpoint/register',
@@ -128,6 +136,8 @@ export default {
                .catch((err) => {
                   console.log('Error while get pb request : ', err);
                });
+         } else {
+            console.log("erreur lors de l'enregistrement");
          }
       },
    },
