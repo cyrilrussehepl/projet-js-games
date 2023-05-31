@@ -15,7 +15,10 @@
 
          <div class="gameslide my-15">
             <swiper class="swiper" :options="swiperOption">
-               <swiper-slide v-for="gameImg in games.presentationImg">
+               <swiper-slide
+                  v-for="gameImg in games.presentationImg"
+                  :key="gameImg"
+               >
                   <div class="relative">
                      <img
                         class="sm:h-full h-64 w-full object-cover"
