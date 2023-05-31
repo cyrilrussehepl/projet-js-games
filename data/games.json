@@ -4,7 +4,7 @@
       "btnName": "Game Details",
       "title": "Tetris",
       "slug": "1",
-      "category": "1",
+      "category": "2",
       "descriptions": [
          "Welcome to Tetris, the classic puzzle game that has captivated players for decades! In this addictive game, you'll need to use your strategic skills to fit the falling blocks into the correct positions. As the blocks drop faster and faster, you'll need to think quickly and react even faster to keep up.",
          " Tetris is easy to learn, but difficult to master. With its simple yet challenging gameplay, it's no wonder that Tetris has remained a fan favorite for so many years. Whether you're a casual player or a seasoned pro, you'll find yourself coming back to Tetris again and again for its timeless appeal.",
@@ -23,7 +23,7 @@
       "btnName": "Game Details",
       "title": "Jetpack Joyride",
       "slug": "2",
-      "category": "2",
+      "category": "1",
       "descriptions": [
          "Jetpack Joyride is a popular mobile game where players control Barry Steakfries, who has a powerful jetpack. The goal is to guide Barry through a laboratory filled with obstacles, collect coins, and avoid hazards like lasers and missiles. The objective is to achieve the highest distance possible and set new high scores.",
          "Push your limits, beat records, and discover why this addictive game is a favorite among players worldwide!"
@@ -42,7 +42,7 @@
       "btnName": "Game Details",
       "title": "Advanced Wars",
       "slug": "3",
-      "category": "2",
+      "category": "3",
       "descriptions": [""],
       "presentationImg": ["/images/others/Advanced-wars.jpg"],
       "gameUrl": "https://vocal-crisp-2785c1.netlify.app/",
@@ -54,7 +54,7 @@
       "btnName": "Game Details",
       "title": "Give Up",
       "slug": "4",
-      "category": "2",
+      "category": "1",
       "descriptions": [""],
       "presentationImg": ["/images/others/give-up.jpg"],
       "gameUrl": "",
